@@ -9,7 +9,7 @@ module.exports = {
 var Sort = function(array, low, high){
   if (low < high){
     var pivot = Partition(array, low, high);
-    //console.log(array.slice(0, high - low + 1) + " low: " + low + " high: " + high + " pivot: " + pivot);
+    
     Sort(array, low, pivot - 1);
     Sort(array, pivot + 1, high);
   }
@@ -17,14 +17,11 @@ var Sort = function(array, low, high){
 
 var Partition = function(array, low, high){
   var temp = array[low];
-  var i = low + 1; j = high;
+  var i = low; j = high + 1;
 
   do {
-    while(array[i] < temp) i++;
-    while(array[j] > temp) j--;
-
-    if (i >= array.length) i--;
-    if (j < 0) j++;
+    do i++; while (array[i] < temp);
+    do j--; while (array[j] > temp);
 
     [array[i], array[j]] = [array[j], array[i]];
   } while (i < j);

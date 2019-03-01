@@ -20,6 +20,10 @@ module.exports = {
 var run = 2;
 
 var InsertionSort = function(array, low, high){
+  if (low >= array.length || high >= array.length){
+    return;
+  }
+
   for(var indx = 1; indx <= high; indx++){
     var temp = array[indx];
     var indx2 = indx - 1;
@@ -28,10 +32,12 @@ var InsertionSort = function(array, low, high){
     }
     array[indx2 + 1] = temp;
   }
-  return array;
 }
-
 var Merge = function(array, low1, high1, low2, high2){
+  if (low1 >= array.length || high2 >= array.length){
+    return;
+  }
+
   var indx1 = low1, indx2 = low2;
   var result = [];
 

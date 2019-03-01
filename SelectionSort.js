@@ -1,8 +1,10 @@
 module.exports = {
-
   Sort(inputArray){
-    var array = inputArray.slice();
+    if (inputArray.size < 2){
+      return inputArray;
+    }
 
+    var array = inputArray.slice();
     for(var indx = 0; indx < array.length - 1; indx++){
       var minIndx = indx;
 
