@@ -137,9 +137,8 @@ MongoClient.connect(url, { useNewUrlParser: true }, function(err, db) {
   });
 });
 
-
-// app.get('/', (req, res) => {
-//   //res.send(runningTime);
-//   res.send(totalRunningTime);
-// })
-// app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.get('/', (req, res) => {
+  //res.send(runningTime);
+  res.send(totalRunningTime);
+})
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
